@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Journal</title>
+</head>
+
+<body>
+</body>
+
+{% block content %}
+<div id=app>
+    <p>[[ title ]]</p>
+    <ul>
+        <li v-for="day in days">
+            <h4> Day [[ day ]]</h4>
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        delimiters: ['[[', ']]'],
+        el: '#app',
+        data: {
+            title: 'Welcome to My Journal',
+            days: [1, 2, 3]
+        }
+    })
+</script>
+{% endblock %}
